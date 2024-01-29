@@ -1,27 +1,149 @@
-.dashboard{
+.dashboard {
     overflow-y: auto;
 
-    .dashboard_header{
+    .dashboard_header {
         @include flex(row, unset);
         padding: 0 0 1rem 0;
 
-        > input{
+        >input {
             @include inputStyle();
-                color: rgba(0, 0, 0, 0.7);
+            color: rgba(0, 0, 0, 0.7);
 
-            &::placeholder{
-                color: rgba(0,0,0,0.5);
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.5);
                 font-family: 'Poppins';
             }
         }
-        >svg{
+
+        >svg {
             font-size: 1.2rem;
             opacity: 0.8;
         }
-        >img{
+
+        >img {
             @include square(2.5rem);
             border-radius: 50%;
             margin: 0 1rem;
+        }
+    }
+
+    .widgetcontainer {
+        @include flex(row, center, stretch, 2rem);
+        padding: 2rem;
+        width: 100%;
+
+        >.widget {
+            background-color: white;
+            box-shadow: 4px 4px 35px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            border-radius: 10px;
+            @include flex(row, space-between, stretch, 2rem);
+
+            >.widgetInfo {
+                >p {
+                    opacity: 0.7;
+                    font-size: 0.8rem;
+                }
+
+                >h4 {
+                    font-size: 1.5em;
+                }
+
+                >span {
+                    @include flex(row, unset, center, 0.2rem);
+                }
+            }
+
+            .widgetCircle {
+                position: relative;
+                @include square(5rem);
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                background-color: rgba(0, 0, 0, 0.05);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    @include square(4.2rem);
+                    background-color: white;
+                    border-radius: 100%;
+                }
+
+                >span {
+                    position: relative;
+
+                }
+            }
+        }
+    }
+
+    .graphContainer{
+        @include flex(row, center, unset, 2rem);
+        width: 100%;
+        padding: 0 2rem 0 2rem;
+
+        >div {
+            background-color: white;
+            box-shadow: 4px 4px 35px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        >.revenue-chart {
+            width: 100%;
+            >h2 {
+                @include heading(3px, 400, uppercase);
+                text-align: center;
+            }
+        }
+
+        >.inventory {
+            width: 100%;
+            @include flex(column, center, unset, 1rem);
+            max-width: 18rem;
+            
+            >h2 {
+                @include heading(3px, 400, uppercase);
+                text-align: center;
+            }
+
+            >div{
+                overflow-y: auto;
+                padding-left: 0.5rem;
+            }
+
+            .inventoryItem{
+                width: 100%;
+                @include flex(row, space-between);
+                padding: 1rem 0;
+                
+                >h5{
+                    letter-spacing: 1px;
+                    font-weight: 400;
+                    font-size: 0.7rem;
+                }
+
+                >div{
+                   margin-left: auto; 
+                   width: 6rem;
+                   background-color: rgb(217,217,217);
+                   border-radius: 20px;
+                   height: 0.4rem;
+                   flex: none;
+
+                   >div{
+                    border-radius: 20px;
+                    height: 100%;
+                   }
+                }
+
+                >span{
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                }
+            }
         }
     }
 }

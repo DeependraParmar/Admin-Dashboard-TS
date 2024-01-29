@@ -2,6 +2,7 @@ import { FaRegBell, FaSearch } from "react-icons/fa"
 import AdminSidebar from "../components/AdminSidebar"
 import Divider from "../components/Divider"
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi"
+import data from "../assets/data.json";
 
 const Dashboard = () => {
   return (
@@ -18,8 +19,38 @@ const Dashboard = () => {
             <img src="https://avatars.githubusercontent.com/u/104254575?v=4" alt="" />
           </div>
           <Divider />
+
+
           <section className="widgetcontainer">
-            <WidgetItem heading="Revenue" value={2000} percent={20} color="green" amount={true} />
+            <WidgetItem heading="Revenue" value={2000} percent={80} color="rgb(0,115,255)" amount={true} />
+            <WidgetItem heading="Users" value={459} percent={-39} color="rgb(0,198,202)" />
+            <WidgetItem heading="Transactions" value={2000} percent={52} color="rgb(255, 196,0)" />
+            <WidgetItem heading="Products" value={1100} percent={43} color="rgb(76,0,255)" />
+          </section>
+
+
+          <section className="graphContainer">
+            <div className="revenue-chart">
+              <h2>Revenue & Transaction</h2>
+            </div>
+            <div className="inventory">
+              <h2>Inventory</h2>
+              <div>
+                {/* <InventoryItem heading="Phones" value={63} color="rgb(0,115,255)" />
+                <InventoryItem heading="Laptops" value={33} color="rgb(0,198,202)" />
+                <InventoryItem heading="Desktops" value={79} color="rgb(255, 196,0)" />
+                <InventoryItem heading="Tablets" value={83} color="rgb(76,0,255)" /> */}
+
+                {
+                  data.categories.map((item, index) => {
+                    return (
+                      <InventoryItem key={index} heading={item.heading} value={item.value} color={`hsl(${item.value * 4},${item.value}%,50%)`} />
+                    )
+                  })
+                }
+
+              </div>
+            </div>
           </section>
         </main>
 
@@ -37,7 +68,7 @@ interface WidgetItemProps {
   color: string,
   amount?: boolean,
 }
-const WidgetItem = ({ heading, value, percent, color, amount }: WidgetItemProps) => {
+const WidgetItem = ({ heading, value, percent, color, amount = false }: WidgetItemProps) => {
   return (
     <>
       <article className="widget">
@@ -47,11 +78,34 @@ const WidgetItem = ({ heading, value, percent, color, amount }: WidgetItemProps)
           {
             percent > 0 ? <span className="green"><HiTrendingUp /> +{percent}%</span> : <span className="red"><HiTrendingDown /> {percent}%</span>
           }
-          <p>{color}</p>
+        </div>
+
+        <div className="widgetCircle" style={{
+          background: `conic-gradient(${color} ${Math.abs(percent) / 100 * 360}deg, #eaeaea 0)`
+        }}>
+          <span style={{ color, fontWeight: 600 }}>{percent}%</span>
         </div>
       </article>
     </>
   )
 }
 
+interface InventoryItemProps {
+  heading: string,
+  value: number,
+  color: string,
+}
+const InventoryItem = ({color,value, heading}: InventoryItemProps) => {
+  return (
+    <>
+      <div className="inventoryItem">
+        <h5>{heading}</h5>
+        <div>
+          <div style={{backgroundColor: color, width: `${value}%`}}></div>
+        </div>
+        <span>{value}%</span>
+      </div>
+    </>
+  )
+}
 export default Dashboard

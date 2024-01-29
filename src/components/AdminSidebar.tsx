@@ -51,7 +51,7 @@ const Li = ({ url, text, location, Icon }: LiProps) => {
             <li style={{
                 backgroundColor: location.pathname === url ? "rgba(17, 141, 240,0.1)" : "",
             }}>
-                <Link to={url} style={{
+                <Link className='sidebarLi' to={url} style={{
                     color: location.pathname === url ? "rgb(17, 141, 240)" : "",
                 }} >
                     <Icon />

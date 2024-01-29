@@ -5,6 +5,7 @@ import { HiTrendingDown, HiTrendingUp } from "react-icons/hi"
 import data from "../assets/data.json";
 import { BarChart, DoughnutChart } from "../components/Charts";
 import { BiMaleFemale } from "react-icons/bi";
+import DashboardTable from "../components/DashboardTable";
 
 const Dashboard = () => {
   return (
@@ -58,7 +59,8 @@ const Dashboard = () => {
             </div>
 
             <div className="transactionTable">
-              Table here
+              <h2 className="heading">Top Transactions</h2>
+              <DashboardTable data={data.transaction}  />
             </div>
           </section>
         </main>
@@ -83,7 +85,7 @@ const WidgetItem = ({ heading, value, percent, color, amount = false }: WidgetIt
       <article className="widget">
         <div className="widgetInfo">
           <p>{heading}</p>
-          <h4>{amount ? `$${value}` : value}</h4>
+          <h4>{amount ? `₹${value}` : value}</h4>
           {
             percent > 0 ? <span className="green"><HiTrendingUp /> +{percent}%</span> : <span className="red"><HiTrendingDown /> {percent}%</span>
           }

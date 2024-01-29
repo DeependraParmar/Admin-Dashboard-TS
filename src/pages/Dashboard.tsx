@@ -65,7 +65,6 @@ const Dashboard = () => {
           </section>
         </main>
 
-
       </div>
 
     </>

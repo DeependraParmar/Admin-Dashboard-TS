@@ -3,7 +3,8 @@ import AdminSidebar from "../components/AdminSidebar"
 import Divider from "../components/Divider"
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi"
 import data from "../assets/data.json";
-import { BarChart } from "../components/Charts";
+import { BarChart, DoughnutChart } from "../components/Charts";
+import { BiMaleFemale } from "react-icons/bi";
 
 const Dashboard = () => {
   return (
@@ -45,8 +46,19 @@ const Dashboard = () => {
                     )
                   })
                 }
-
               </div>
+            </div>
+          </section>
+
+          <section className="transactionContainer">
+            <div className="genderChart">
+              <h2>Gender Ratio</h2>
+              <DoughnutChart data={[229, 192]} labels={["Male", "Female"]} bgColor={["rgba(53,162,235,0.8)", "hsl(340,82%,56%)"]} cutout={90} />
+              <p><BiMaleFemale /></p>
+            </div>
+
+            <div className="transactionTable">
+              Table here
             </div>
           </section>
         </main>

@@ -1,0 +1,27 @@
+.dashboard{
+    overflow-y: auto;
+
+    .dashboard_header{
+        @include flex(row, unset);
+        padding: 0 0 1rem 0;
+
+        > input{
+            @include inputStyle();
+                color: rgba(0, 0, 0, 0.7);
+
+            &::placeholder{
+                color: rgba(0,0,0,0.5);
+                font-family: 'Poppins';
+            }
+        }
+        >svg{
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        >img{
+            @include square(2.5rem);
+            border-radius: 50%;
+            margin: 0 1rem;
+        }
+    }
+}

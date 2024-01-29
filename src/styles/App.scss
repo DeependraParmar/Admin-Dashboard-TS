@@ -1,0 +1,89 @@
+// using the required scss files here 
+@import './mixin';
+@import "./dashboard";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.red{
+    color: red;
+}
+
+.purple{
+    color: rgb(47, 0, 255);
+}
+
+.green{
+    color: rgb(0,195,0);
+}
+
+
+.adminContainer{
+    @include grid(1fr 4fr, 2rem);
+    height: 100vh;
+    background-color: rgb(241, 241, 241);
+    padding: 1rem;
+
+    >aside{
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        z-index: 10;
+        overflow-y: auto;
+        border-radius: 10px;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        >h2{
+            >img{
+                width: 60%;
+                margin: 1rem 1rem;
+            }
+        }
+
+        >div{
+            margin: 1rem 1rem;
+            >ul{
+                @include flex(column, unset, unset, 0.5rem);
+                list-style: none;
+
+                >li{
+                    padding: 0.5rem 1rem;
+                    border-radius: 10px;
+
+                    >a{
+                        color: rgba(0,0,0,0.825);
+                        @include flex(row, unset);
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    >main{
+        width: 100%;
+        padding: 2rem 2rem;
+        background-color: white;
+        border-radius: 10px;
+    }
+}

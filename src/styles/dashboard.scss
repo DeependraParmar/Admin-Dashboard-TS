@@ -96,12 +96,13 @@
             >h2 {
                 @include heading(3px, 400, uppercase);
                 text-align: center;
+                margin-bottom: 1rem;
             }
         }
 
         >.inventory {
             width: 100%;
-            @include flex(column, center, unset, 1rem);
+            @include flex(column, flex-start, unset, 1rem);
             max-width: 18rem;
             
             >h2 {

@@ -3,6 +3,7 @@ import AdminSidebar from "../components/AdminSidebar"
 import Divider from "../components/Divider"
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi"
 import data from "../assets/data.json";
+import { BarChart } from "../components/Charts";
 
 const Dashboard = () => {
   return (
@@ -32,15 +33,11 @@ const Dashboard = () => {
           <section className="graphContainer">
             <div className="revenue-chart">
               <h2>Revenue & Transaction</h2>
+              <BarChart data1={[300,144,433,655,247,755,190]} data2={[200,444,556,779,466,990,740]} title1="Revenue" title2="Transactions" bgColor1="rgb(0,115,255)" bgColor2="rgba(53,162,235,0.8)" />
             </div>
             <div className="inventory">
               <h2>Inventory</h2>
               <div>
-                {/* <InventoryItem heading="Phones" value={63} color="rgb(0,115,255)" />
-                <InventoryItem heading="Laptops" value={33} color="rgb(0,198,202)" />
-                <InventoryItem heading="Desktops" value={79} color="rgb(255, 196,0)" />
-                <InventoryItem heading="Tablets" value={83} color="rgb(76,0,255)" /> */}
-
                 {
                   data.categories.map((item, index) => {
                     return (

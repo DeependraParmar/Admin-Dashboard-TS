@@ -55,11 +55,101 @@ const arr: Array<DataType> = [
     stock: 213,
     action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
   },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
 ];
 
 const Products = () => {
   const [data] = useState<DataType[]>(arr);
-  const Table = useCallback(TableHOC<DataType>(columns, data, "productsTable"),[]);
+  const Table = useCallback(TableHOC<DataType>(columns, data, "productsTable", true),[]);
 
   return (
     <div className="adminContainer">

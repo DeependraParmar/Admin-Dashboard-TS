@@ -1,8 +1,13 @@
-.productsTable{
-    padding: 1rem; 
-    
+.productContainer{
+    overflow-y: auto;
+    .heading{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }    
+    .productsTable{
+        padding: 1rem; 
+    }
 }
-
 
 .newProductButton{
     position: fixed;
@@ -10,7 +15,7 @@
     top: 2rem;
     @include square(2.5rem);
     @include flex(row, center, center, 0);
-    background-color: rgb(201, 9, 9);
+    background-color: rgb(46, 46, 46);
     border-radius: 50%;
     color: white;
     

@@ -1,0 +1,26 @@
+.productsTable{
+    padding: 1rem; 
+    
+}
+
+
+.newProductButton{
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    @include square(2.5rem);
+    @include flex(row, center, center, 0);
+    background-color: rgb(201, 9, 9);
+    border-radius: 50%;
+    color: white;
+    
+    &:hover{
+        animation: rotate 0.5s ease-in-out alternate;
+    }
+
+    @keyframes rotate {
+        to{
+            transform: rotate(90deg);
+        }
+    }
+}
